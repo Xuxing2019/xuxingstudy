@@ -8,6 +8,8 @@ import com.xuxingstudy.dispatch.model.DispatchOrderCarrier;
 import com.xuxingstudy.dispatch.service.IXuxingOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,6 +52,10 @@ public class XuxingOrderServiceImpl extends ServiceImpl<XuxingOrderMapper, Xuxin
                 .queueName("dispatchOrderQueue")
                 .content(dispatchOrderModel)
                 .build();
-        producer.send(dispatchOrderCarrier);
+        // 保存本地消息
+        producer.send(dispatchOrderCarrier, (correlationData, ack, cause) -> {
+            log.info("confirm ack={}", ack);
+            // 更新本地消息记录
+        });
     }
 }
