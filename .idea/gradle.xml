@@ -13,6 +13,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/rabbitmq-dist-transaction" />
+            <option value="$PROJECT_DIR$/rabbitmq-dist-transaction/common" />
             <option value="$PROJECT_DIR$/rabbitmq-dist-transaction/dispatch-server" />
             <option value="$PROJECT_DIR$/rabbitmq-dist-transaction/order-server" />
             <option value="$PROJECT_DIR$/xuxingstudy-common" />

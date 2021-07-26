@@ -1,6 +1,7 @@
 bootJar.enabled = true
 dependencies {
-    compileOnly(project(':xuxingstudy-common'))
+    implementation(project(':xuxingstudy-common'))
+    implementation(project(":rabbitmq-dist-transaction:common"))
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'mysql:mysql-connector-java:8.0.26'
     implementation 'com.baomidou:mybatis-plus-boot-starter:3.4.3.1'

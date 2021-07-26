@@ -2,11 +2,13 @@ package com.xuxingstudy.common.rabbit;
 
 import lombok.ToString;
 
+import java.io.Serializable;
+
 /**
  * @author xhb
  * @since 2021/7/25
  */
-public interface Carrier<T> {
+public interface Carrier<T> extends Serializable {
 
     /**
      * 交换机名称
@@ -24,7 +26,7 @@ public interface Carrier<T> {
      * 路由Key
      * @return String
      */
-    String getRoutingKeyName();
+    String getRoutingKey();
 
     /**
      * 消息体

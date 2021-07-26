@@ -13,4 +13,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IXuxingOrderService extends IService<XuxingOrder> {
 
+    /**
+     * 创建订单
+     */
+    void createOrder();
+
 }

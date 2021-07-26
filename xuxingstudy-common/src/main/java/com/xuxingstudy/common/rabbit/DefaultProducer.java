@@ -18,7 +18,7 @@ public class DefaultProducer implements Producer{
     @Override
     public void send(Carrier carrier) {
         try {
-            rabbitTemplate.convertAndSend(carrier.getExchangeName(),carrier.getRoutingKeyName(), carrier.getContent());
+            rabbitTemplate.convertAndSend(carrier.getExchangeName(),carrier.getRoutingKey(), carrier.getContent());
         } catch (AmqpException e) {
             log.error("rabbitSendMsgException carrier={} msg={}", carrier , e.getMessage());
         }

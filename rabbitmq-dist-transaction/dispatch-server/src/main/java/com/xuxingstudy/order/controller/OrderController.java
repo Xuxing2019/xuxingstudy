@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2021/7/25
  */
 @RestController
-@RequestMapping("order")
+@RequestMapping("dispatch/order")
 public class OrderController {
 
     @PostMapping("create")

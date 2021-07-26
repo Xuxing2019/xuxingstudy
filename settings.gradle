@@ -1,5 +1,6 @@
 rootProject.name = 'xuxingstudy'
 include 'xuxingstudy-common'
+include 'rabbitmq-dist-transaction:common'
 include 'rabbitmq-dist-transaction:order-server'
 include 'rabbitmq-dist-transaction:dispatch-server'
 
