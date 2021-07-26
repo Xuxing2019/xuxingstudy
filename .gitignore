@@ -1,0 +1,9 @@
+# Project exclude paths
+/.gradle/
+/rabbitmq-dist-transaction/dispatch-server/build/
+/rabbitmq-dist-transaction/dispatch-server/build/classes/java/main/
+/rabbitmq-dist-transaction/dispatch-server/build/classes/java/test/
+/rabbitmq-dist-transaction/order-server/build/
+/rabbitmq-dist-transaction/order-server/build/classes/java/main/
+/xuxingstudy-common/build/
+/xuxingstudy-common/build/classes/java/main/

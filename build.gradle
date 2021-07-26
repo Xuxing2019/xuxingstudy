@@ -1,0 +1,83 @@
+buildscript {
+    ext {
+    }
+    repositories {
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public" }
+        maven { url "https://maven.aliyun.com/nexus/content/repositories/gradle-plugin" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.5.2")
+    }
+}
+
+ext {
+    libraries = [
+            springBootVersion = '2.3.11.RELEASE',
+            springCloudVersion = 'Hoxton.SR8',
+            springCloudAlibabaVersion = '2.2.3.RELEASE',
+            hutool = '5.1.4',
+            fastjsonVersion = '1.2.73',
+            mybatisPlusVersion = '3.3.1',
+    ]
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    group = 'top.xuxing'
+    version = '1.0.0'
+
+    repositories {
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public" }
+        maven { url "https://maven.aliyun.com/nexus/content/repositories/gradle-plugin" }
+        mavenCentral()
+    }
+
+    //禁用test
+    test.enabled = true
+    bootJar.enabled = false
+
+    //依赖
+    dependencies {
+        //maven仓库中心没有的jar，则放入libs目录下
+        //compile fileTree(dir: 'libs', include: ['*.jar'])
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        testCompileOnly 'org.projectlombok:lombok'
+        testAnnotationProcessor 'org.projectlombok:lombok'
+        implementation "com.alibaba:fastjson:${fastjsonVersion}"
+        annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'com.baomidou:mybatis-plus-generator'
+        testImplementation 'org.freemarker:freemarker'
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+            mavenBom "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}"
+        }
+        dependencies {
+            dependency "cn.hutool:hutool-all:${hutool}"
+            dependency "com.baomidou:mybatis-plus-extension:${mybatisPlusVersion}"
+            dependency "com.baomidou:mybatis-plus-generator:${mybatisPlusVersion}"
+            dependency "com.baomidou:mybatis-plus-annotation:${mybatisPlusVersion}"
+            dependency "com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}"
+        }
+    }
+
+//    configurations {
+//        compile.exclude module: 'spring-boot-starter-tomcat'
+//        compile.exclude module: 'tomcat-embed-el'
+//    }
+
+}

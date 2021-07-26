@@ -1,0 +1,9 @@
+server:
+  port: 5001
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/rabbitmq-dist-transaction
+    username: root
+    password: Xuxing_2019
