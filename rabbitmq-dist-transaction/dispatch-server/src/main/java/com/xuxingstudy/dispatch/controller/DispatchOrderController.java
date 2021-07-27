@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- *  前端控制器
+ * 订单派送表 前端控制器
  * </p>
  *
  * @author xuxing
- * @since 2021-07-26
+ * @since 2021-07-27
  */
 @RestController
-@RequestMapping("/dispatch/xuxing-dispatch-order")
-public class XuxingDispatchOrderController {
+@RequestMapping("/dispatch/dispatch-order")
+public class DispatchOrderController {
 
 }

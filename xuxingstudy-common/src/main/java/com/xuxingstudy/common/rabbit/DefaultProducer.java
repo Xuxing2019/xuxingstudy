@@ -30,18 +30,6 @@ public class DefaultProducer implements Producer,RabbitTemplate.ConfirmCallback,
     }
 
     @Override
-    public void send(Carrier carrier, RabbitTemplate.ConfirmCallback confirmCallback) {
-        try {
-            rabbitTemplate.setMandatory(true);
-            rabbitTemplate.setConfirmCallback(confirmCallback);
-            rabbitTemplate.setReturnCallback(this);
-            rabbitTemplate.convertAndSend(carrier.getExchangeName(),carrier.getRoutingKey(), carrier.getContent());
-        } catch (AmqpException e) {
-            log.error("rabbitSendMsgException carrier={} msg={}", carrier , e.getMessage());
-        }
-    }
-
-    @Override
     public void send(Carrier carrier, long delayTime) {
         // TODO 延时消息发送
     }

@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2021/7/25
  */
 @SpringBootApplication
-public class DispatchApplication {
+public class OrderApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DispatchApplication.class);
+        SpringApplication.run(OrderApplication.class);
     }
 
 }

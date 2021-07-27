@@ -5,7 +5,7 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar" />
+          <entry name="$PROJECT_DIR$/../../workApp/gradle-6.9/config/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar" />
         </processorPath>
         <module name="xuxingstudy.test" />
         <module name="xuxingstudy.rabbitmq-dist-transaction.dispatch-server.test" />
@@ -17,8 +17,8 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/2.3.11.RELEASE/7f5ff84c843d0d2b02c5219dea5e5b73443dfbd6/spring-boot-configuration-processor-2.3.11.RELEASE.jar" />
+          <entry name="$PROJECT_DIR$/../../workApp/gradle-6.9/config/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar" />
+          <entry name="$PROJECT_DIR$/../../workApp/gradle-6.9/config/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/2.3.11.RELEASE/7f5ff84c843d0d2b02c5219dea5e5b73443dfbd6/spring-boot-configuration-processor-2.3.11.RELEASE.jar" />
         </processorPath>
         <module name="xuxingstudy.xuxingstudy-common.main" />
         <module name="xuxingstudy.rabbitmq-dist-transaction.common.main" />

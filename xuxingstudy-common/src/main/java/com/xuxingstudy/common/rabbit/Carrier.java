@@ -1,6 +1,6 @@
 package com.xuxingstudy.common.rabbit;
 
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 
@@ -8,29 +8,36 @@ import java.io.Serializable;
  * @author xhb
  * @since 2021/7/25
  */
-public interface Carrier<T> extends Serializable {
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Carrier<T> implements Serializable{
+
+    private static final long serialVersionUID = 1L;
 
     /**
      * 交换机名称
      * @return String
      */
-    String getExchangeName();
+    private String exchangeName;
 
     /**
      * 队列名称
      * @return String
      */
-    String getQueueName();
+    private String queueName;
 
     /**
      * 路由Key
      * @return String
      */
-    String getRoutingKey();
+    private String routingKey;
 
     /**
      * 消息体
      * @return 消息内容
      */
-    T getContent();
+    T content;
 }
