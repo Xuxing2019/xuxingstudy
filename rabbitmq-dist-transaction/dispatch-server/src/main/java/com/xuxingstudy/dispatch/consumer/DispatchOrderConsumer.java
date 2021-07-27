@@ -1,4 +1,4 @@
-package com.xuxingstudy.order.consumer;
+package com.xuxingstudy.dispatch.consumer;
 
 import com.xuxingstudy.common.rabbit.Carrier;
 import com.xuxingstudy.order.common.DispatchOrderModel;

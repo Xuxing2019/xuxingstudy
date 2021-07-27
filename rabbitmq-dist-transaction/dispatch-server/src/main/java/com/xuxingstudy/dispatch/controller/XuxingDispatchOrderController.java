@@ -1,4 +1,4 @@
-package com.xuxingstudy.order.controller;
+package com.xuxingstudy.dispatch.controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;

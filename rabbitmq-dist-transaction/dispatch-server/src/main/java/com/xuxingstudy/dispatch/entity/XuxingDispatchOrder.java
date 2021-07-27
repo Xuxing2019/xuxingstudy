@@ -1,4 +1,4 @@
-package com.xuxingstudy.order.entity;
+package com.xuxingstudy.dispatch.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.time.LocalDateTime;

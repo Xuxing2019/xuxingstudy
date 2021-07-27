@@ -1,7 +1,7 @@
-package com.xuxingstudy.order.service;
+package com.xuxingstudy.dispatch.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.xuxingstudy.order.entity.XuxingDispatchOrder;
+import com.xuxingstudy.dispatch.entity.XuxingDispatchOrder;
 
 /**
  * <p>

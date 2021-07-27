@@ -1,7 +1,7 @@
-package com.xuxingstudy.order.mapper;
+package com.xuxingstudy.dispatch.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xuxingstudy.order.entity.XuxingDispatchOrder;
+import com.xuxingstudy.dispatch.entity.XuxingDispatchOrder;
 
 /**
  * <p>
