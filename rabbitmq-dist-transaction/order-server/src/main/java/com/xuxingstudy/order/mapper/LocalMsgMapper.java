@@ -1,7 +1,7 @@
 package com.xuxingstudy.order.mapper;
 
+import com.xuxingstudy.order.entity.LocalMsg;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xuxingstudy.order.entity.XuxingDispatchOrder;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.xuxingstudy.order.entity.XuxingDispatchOrder;
  * @author xuxing
  * @since 2021-07-26
  */
-public interface XuxingDispatchOrderMapper extends BaseMapper<XuxingDispatchOrder> {
+public interface LocalMsgMapper extends BaseMapper<LocalMsg> {
 
 }

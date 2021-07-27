@@ -1,9 +1,9 @@
 package com.xuxingstudy.order.service.impl;
 
-import com.xuxingstudy.dispatch.entity.XuxingDispatchOrder;
-import com.xuxingstudy.dispatch.mapper.XuxingDispatchOrderMapper;
-import com.xuxingstudy.dispatch.service.IXuxingDispatchOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.xuxingstudy.order.entity.XuxingDispatchOrder;
+import com.xuxingstudy.order.mapper.XuxingDispatchOrderMapper;
+import com.xuxingstudy.order.service.IXuxingDispatchOrderService;
 import org.springframework.stereotype.Service;
 
 /**

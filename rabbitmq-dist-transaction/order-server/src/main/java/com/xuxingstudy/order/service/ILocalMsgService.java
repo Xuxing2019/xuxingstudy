@@ -1,7 +1,7 @@
 package com.xuxingstudy.order.service;
 
+import com.xuxingstudy.order.entity.LocalMsg;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.xuxingstudy.order.entity.XuxingDispatchOrder;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.xuxingstudy.order.entity.XuxingDispatchOrder;
  * @author xuxing
  * @since 2021-07-26
  */
-public interface IXuxingDispatchOrderService extends IService<XuxingDispatchOrder> {
+public interface ILocalMsgService extends IService<LocalMsg> {
 
 }
