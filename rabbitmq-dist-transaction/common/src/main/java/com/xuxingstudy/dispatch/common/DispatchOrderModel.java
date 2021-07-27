@@ -1,4 +1,4 @@
-package com.xuxingstudy.order.common;
+package com.xuxingstudy.dispatch.common;
 
 import lombok.Data;
 

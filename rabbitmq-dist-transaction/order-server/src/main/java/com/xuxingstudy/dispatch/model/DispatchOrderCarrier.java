@@ -1,7 +1,7 @@
-package com.xuxingstudy.order.model;
+package com.xuxingstudy.dispatch.model;
 
 import com.xuxingstudy.common.rabbit.Carrier;
-import com.xuxingstudy.order.common.DispatchOrderModel;
+import com.xuxingstudy.dispatch.common.DispatchOrderModel;
 import lombok.Builder;
 import lombok.Data;
 

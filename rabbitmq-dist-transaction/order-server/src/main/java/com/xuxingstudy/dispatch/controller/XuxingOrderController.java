@@ -1,7 +1,7 @@
-package com.xuxingstudy.order.controller;
+package com.xuxingstudy.dispatch.controller;
 
 
-import com.xuxingstudy.order.service.IXuxingOrderService;
+import com.xuxingstudy.dispatch.service.IXuxingOrderService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

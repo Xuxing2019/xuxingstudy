@@ -1,4 +1,4 @@
-package com.xuxingstudy.order.entity;
+package com.xuxingstudy.dispatch.entity;
 
 import java.time.LocalDateTime;
 import java.io.Serializable;
