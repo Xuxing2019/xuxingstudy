@@ -1,15 +1,13 @@
-package com.xuxingstudy.dispatch.service.impl;
+package com.xuxingstudy.order.service.impl;
 
 import com.xuxingstudy.common.rabbit.Producer;
 import com.xuxingstudy.dispatch.common.DispatchOrderModel;
-import com.xuxingstudy.dispatch.entity.XuxingOrder;
-import com.xuxingstudy.dispatch.mapper.XuxingOrderMapper;
-import com.xuxingstudy.dispatch.model.DispatchOrderCarrier;
-import com.xuxingstudy.dispatch.service.IXuxingOrderService;
+import com.xuxingstudy.order.entity.XuxingOrder;
+import com.xuxingstudy.order.mapper.XuxingOrderMapper;
+import com.xuxingstudy.order.model.DispatchOrderCarrier;
+import com.xuxingstudy.order.service.IXuxingOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.rabbit.connection.CorrelationData;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
