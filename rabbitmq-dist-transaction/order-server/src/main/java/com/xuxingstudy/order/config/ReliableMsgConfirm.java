@@ -40,7 +40,7 @@ public class ReliableMsgConfirm implements RabbitTemplate.ConfirmCallback, Rabbi
         if (ack) {
             localMsgService.update(Wrappers.<LocalMsg>lambdaUpdate().set(LocalMsg::getStatus, 1).eq(LocalMsg::getId, correlationData.getId()));
         } else {
-            // TODO 重发
+            // TODO 不操作定时任务重发
         }
     }
 

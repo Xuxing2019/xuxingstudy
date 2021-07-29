@@ -1,12 +1,16 @@
 package com.xuxingstudy.dispatch.consumer;
 
 import com.alibaba.fastjson.JSON;
+import com.rabbitmq.client.Channel;
 import com.xuxingstudy.common.rabbit.Carrier;
 import com.xuxingstudy.dispatch.common.DispatchOrderModel;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.*;
 import org.springframework.stereotype.Component;
+
+import java.io.IOException;
 
 /**
  * <p>
@@ -27,8 +31,13 @@ import org.springframework.stereotype.Component;
 public class DispatchOrderConsumer {
 
     @RabbitHandler
-    private void handler(Carrier<DispatchOrderModel> carrier){
+    private void handler(Carrier<DispatchOrderModel> carrier, Channel channel, Message message){
         DispatchOrderModel dispatchOrderModel = carrier.getContent();
         log.info("dispatchOrderModel={}", JSON.toJSONString(dispatchOrderModel));
+        try {
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
