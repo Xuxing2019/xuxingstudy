@@ -30,16 +30,17 @@ public class MybatisPlusGenerate {
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("xuxing");
         gc.setOpen(false);
+        gc.setServiceName("%sService");
         // gc.setSwagger2(true); 实体属性 Swagger2 注解
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://mysql:3306/rabbitmq-dist-transaction?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://mysql:3306/rabbitmq-dist-transaction?useUnicode=true&useSSL=false&characterEncoding=utf8&allowPublicKeyRetrieval=true");
         // dsc.setSchemaName("public");
-        dsc.setDriverName("com.mysql.jdbc.Driver");
+        dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("Xuxing_2019");
+        dsc.setPassword("xuxing2019.");
         mpg.setDataSource(dsc);
 
         // 包配置
@@ -108,7 +109,7 @@ public class MybatisPlusGenerate {
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
 //        strategy.setSuperEntityClass("你自己的父类实体,没有就不用设置!");
         // 是否使用lombok
-        strategy.setEntityLombokModel(false);
+        strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         // 公共父类
 //        strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
@@ -116,7 +117,7 @@ public class MybatisPlusGenerate {
 //        strategy.setSuperEntityColumns("id");
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
         strategy.setControllerMappingHyphenStyle(true);
-        strategy.setTablePrefix(pc.getModuleName() + "_");
+        // strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();

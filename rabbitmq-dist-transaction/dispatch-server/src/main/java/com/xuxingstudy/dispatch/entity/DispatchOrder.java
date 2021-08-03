@@ -1,19 +1,20 @@
 package com.xuxingstudy.dispatch.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.time.LocalDateTime;
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ * 订单派送表
  * </p>
  *
  * @author xuxing
- * @since 2021-07-26
+ * @since 2021-07-27
  */
-@TableName("xuxing_dispatch_order")
-public class XuxingDispatchOrder implements Serializable {
+@TableName("dispatch_order")
+public class DispatchOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -92,7 +93,7 @@ public class XuxingDispatchOrder implements Serializable {
 
     @Override
     public String toString() {
-        return "XuxingDispatchOrder{" +
+        return "DispatchOrder{" +
             "dispatchId=" + dispatchId +
             ", orderId=" + orderId +
             ", status=" + status +

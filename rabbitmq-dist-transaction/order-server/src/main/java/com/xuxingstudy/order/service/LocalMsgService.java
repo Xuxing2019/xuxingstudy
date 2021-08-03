@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author xuxing
- * @since 2021-07-26
+ * @since 2021-07-27
  */
-public interface ILocalMsgService extends IService<LocalMsg> {
+public interface LocalMsgService extends IService<LocalMsg> {
 
 }

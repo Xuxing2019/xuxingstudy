@@ -1,4 +1,4 @@
-package com.xuxingstudy.order.controller;
+package com.xuxingstudy.dispatch.controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- *  前端控制器
+ * 订单派送表 前端控制器
  * </p>
  *
  * @author xuxing
- * @since 2021-07-26
+ * @since 2021-07-27
  */
 @RestController
-@RequestMapping("/order/local-msg")
-public class LocalMsgController {
+@RequestMapping("/dispatch/dispatch-order")
+public class DispatchOrderController {
 
 }

@@ -1,25 +1,26 @@
-package com.xuxingstudy.dispatch.entity;
+package com.xuxingstudy.order.entity;
+
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.io.Serializable;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ * 订单表
  * </p>
  *
  * @author xuxing
- * @since 2021-07-26
+ * @since 2021-07-27
  */
-@Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
-public class XuxingOrder implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+@Getter
+@Setter
+@TableName("order_info")
+public class Order{
 
     /**
      * 订单主键
@@ -39,7 +40,7 @@ public class XuxingOrder implements Serializable {
     /**
      * 创建时间
      */
+    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
-
 
 }
