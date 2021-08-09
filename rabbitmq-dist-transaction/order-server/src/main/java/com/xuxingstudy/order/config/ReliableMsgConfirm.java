@@ -1,8 +1,6 @@
 package com.xuxingstudy.order.config;
 
-import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.xuxingstudy.common.rabbit.Carrier;
 import com.xuxingstudy.order.entity.LocalMsg;
 import com.xuxingstudy.order.service.LocalMsgService;
 import lombok.extern.slf4j.Slf4j;
@@ -39,8 +37,6 @@ public class ReliableMsgConfirm implements RabbitTemplate.ConfirmCallback, Rabbi
         // 消息发送成功修改本地消息冗余数据
         if (ack) {
             localMsgService.update(Wrappers.<LocalMsg>lambdaUpdate().set(LocalMsg::getStatus, 1).eq(LocalMsg::getId, correlationData.getId()));
-        } else {
-            // TODO 不操作定时任务重发
         }
     }
 

@@ -1,9 +1,11 @@
 package com.xuxingstudy.dispatch.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+import lombok.Data;
 
-import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -13,6 +15,7 @@ import java.io.Serializable;
  * @author xuxing
  * @since 2021-07-27
  */
+@Data
 @TableName("dispatch_order")
 public class DispatchOrder implements Serializable {
 
@@ -21,6 +24,7 @@ public class DispatchOrder implements Serializable {
     /**
      * 运单主键
      */
+    @TableId(type = IdType.AUTO)
     private Integer dispatchId;
 
     /**
@@ -46,60 +50,6 @@ public class DispatchOrder implements Serializable {
     /**
      * 创建时间
      */
-    private LocalDateTime createTime;
-
-    public Integer getDispatchId() {
-        return dispatchId;
-    }
-
-    public void setDispatchId(Integer dispatchId) {
-        this.dispatchId = dispatchId;
-    }
-    public Integer getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
-    }
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-    public String getOrderContent() {
-        return orderContent;
-    }
-
-    public void setOrderContent(String orderContent) {
-        this.orderContent = orderContent;
-    }
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-    public LocalDateTime getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(LocalDateTime createTime) {
-        this.createTime = createTime;
-    }
-
-    @Override
-    public String toString() {
-        return "DispatchOrder{" +
-            "dispatchId=" + dispatchId +
-            ", orderId=" + orderId +
-            ", status=" + status +
-            ", orderContent=" + orderContent +
-            ", userId=" + userId +
-            ", createTime=" + createTime +
-        "}";
-    }
+    @TableField(fill = FieldFill.INSERT)
+    private Date createTime;
 }

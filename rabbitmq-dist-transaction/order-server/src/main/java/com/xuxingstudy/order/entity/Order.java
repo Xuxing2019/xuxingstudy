@@ -1,8 +1,6 @@
 package com.xuxingstudy.order.entity;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,12 +17,13 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
-@TableName("order_info")
+@TableName("t_order")
 public class Order{
 
     /**
      * 订单主键
      */
+    @TableId(type = IdType.AUTO)
     private Integer orderId;
 
     /**

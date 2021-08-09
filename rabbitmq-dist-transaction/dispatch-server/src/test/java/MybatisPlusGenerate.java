@@ -36,7 +36,7 @@ public class MybatisPlusGenerate {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://mysql:3306/rabbitmq-dist-transaction?useUnicode=true&useSSL=false&characterEncoding=utf8&allowPublicKeyRetrieval=true");
+        dsc.setUrl("jdbc:mysql://192.168.0.10:3306/rabbitmq-dist-transaction?useUnicode=true&useSSL=false&characterEncoding=utf8&allowPublicKeyRetrieval=true");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");

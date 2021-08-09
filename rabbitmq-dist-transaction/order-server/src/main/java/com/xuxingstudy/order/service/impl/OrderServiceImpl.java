@@ -44,12 +44,10 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     @Transactional(rollbackFor = Exception.class)
     public void create() {
         Order order = new Order();
-        Random random = new Random();
-        order.setOrderId(random.nextInt());
         order.setUserId(6676);
         order.setOrderContent("aabbcc");
-        int insert = this.baseMapper.insert(order);
-        if (insert > 0) {
+        boolean save = save(order);
+        if (save) {
             DispatchOrderModel dispatchOrderModel = new DispatchOrderModel();
             BeanUtils.copyProperties(order, dispatchOrderModel);
             // 发送派单需求
@@ -59,9 +57,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
             dispatchOrderModelCarrier.setQueueName("dispatchOrderQueue");
             dispatchOrderModelCarrier.setContent(dispatchOrderModel);
             // 保存本地消息
-            int id = random.nextInt();
             LocalMsg localMsg = new LocalMsg();
-            localMsg.setId(id);
             localMsg.setContent(JSON.toJSONString(dispatchOrderModelCarrier));
             localMsg.setStatus(0);
             localMsg.setCreateTime(LocalDateTime.now());
@@ -69,7 +65,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
             localMsgService.save(localMsg);
             // 异步派单
             CorrelationData correlationData = new CorrelationData();
-            correlationData.setId(String.valueOf(id));
+            correlationData.setId(String.valueOf(localMsg.getId()));
             reliableRabbitTemplate.convertAndSend(dispatchOrderModelCarrier.getExchangeName(), dispatchOrderModelCarrier.getRoutingKey(), dispatchOrderModelCarrier, correlationData);
         }
     }

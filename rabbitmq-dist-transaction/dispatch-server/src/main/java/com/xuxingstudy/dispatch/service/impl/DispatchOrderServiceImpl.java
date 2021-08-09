@@ -1,9 +1,9 @@
 package com.xuxingstudy.dispatch.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xuxingstudy.dispatch.entity.DispatchOrder;
 import com.xuxingstudy.dispatch.mapper.DispatchOrderMapper;
 import com.xuxingstudy.dispatch.service.DispatchOrderService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

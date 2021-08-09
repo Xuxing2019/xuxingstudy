@@ -1,7 +1,6 @@
 package com.xuxingstudy.dispatch.mapper;
-
-import com.xuxingstudy.dispatch.entity.DispatchOrder;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.xuxingstudy.dispatch.entity.DispatchOrder;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
