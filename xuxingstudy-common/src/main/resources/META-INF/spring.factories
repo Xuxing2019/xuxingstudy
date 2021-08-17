@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.xuxingstudy.common.rabbit.DefaultProducer
+  com.xuxingstudy.common.rabbit.DefaultProducer,\
+  com.xuxingstudy.common.mybatisplus.MyMetaObjectHandler
